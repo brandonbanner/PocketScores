@@ -135,7 +135,7 @@ public class sportsFeedTranslator {
         return sub1;
     }
     
-    public String firstQuarterHome(int gameNumber){
+    public String getFirstQuarterHome(int gameNumber){
         if(getStatus(gameNumber).equals("scheduled")){
             return "0";
         }
@@ -150,7 +150,7 @@ public class sportsFeedTranslator {
         return sub1;
     }
     
-    public String secondQuarterHome(int gameNumber){
+    public String getSecondQuarterHome(int gameNumber){
         if(getStatus(gameNumber).equals("scheduled")){
             return "0";
         }
@@ -158,14 +158,14 @@ public class sportsFeedTranslator {
         int index = 0;
         String search = "homePeriods\":[";
         for(int c = 0; c < gameNumber; c++){
-            index = s1.indexOf(search, index) + search.length() + firstQuarterHome(gameNumber).length() + 1;
+            index = s1.indexOf(search, index) + search.length() + getFirstQuarterHome(gameNumber).length() + 1;
         }
         int end = s1.indexOf(",", index);
         String sub1 = s1.substring(index, end);
         return sub1;
     }
     
-    public String thirdQuarterHome(int gameNumber){
+    public String getThirdQuarterHome(int gameNumber){
         if(getStatus(gameNumber).equals("scheduled")){
             return "0";
         }
@@ -173,14 +173,14 @@ public class sportsFeedTranslator {
         int index = 0;
         String search = "homePeriods\":[";
         for(int c = 0; c < gameNumber; c++){
-            index = s1.indexOf(search, index) + search.length() + firstQuarterHome(gameNumber).length() + 1 + secondQuarterHome(gameNumber).length() + 1;
+            index = s1.indexOf(search, index) + search.length() + getFirstQuarterHome(gameNumber).length() + 1 + getSecondQuarterHome(gameNumber).length() + 1;
         }
         int end = s1.indexOf(",", index);
         String sub1 = s1.substring(index, end);
         return sub1;
     }
     
-    public String fourthQuarterHomeFootball(int gameNumber){
+    public String getFourthQuarterHomeFootball(int gameNumber){
         if(getStatus(gameNumber).equals("scheduled")){
             return "0";
         }
@@ -188,14 +188,14 @@ public class sportsFeedTranslator {
         int index = 0;
         String search = "homePeriods\":[";
         for(int c = 0; c < gameNumber; c++){
-            index = s1.indexOf(search, index) + search.length() + firstQuarterHome(gameNumber).length() + 1 + secondQuarterHome(gameNumber).length() + 1 + thirdQuarterHome(gameNumber).length() + 1;
+            index = s1.indexOf(search, index) + search.length() + getFirstQuarterHome(gameNumber).length() + 1 + getSecondQuarterHome(gameNumber).length() + 1 + getThirdQuarterHome(gameNumber).length() + 1;
         }
         int end = s1.indexOf("]", index);
         String sub1 = s1.substring(index, end);
         return sub1;
     }
     
-    public String firstQuarterAway(int gameNumber){
+    public String getFirstQuarterAway(int gameNumber){
         if(getStatus(gameNumber).equals("scheduled")){
             return "0";
         }
@@ -210,7 +210,7 @@ public class sportsFeedTranslator {
         return sub1;
     }
     
-    public String secondQuarterAway(int gameNumber){
+    public String getSecondQuarterAway(int gameNumber){
         if(getStatus(gameNumber).equals("scheduled")){
             return "0";
         }
@@ -218,14 +218,14 @@ public class sportsFeedTranslator {
         int index = 0;
         String search = "awayPeriods\":[";
         for(int c = 0; c < gameNumber; c++){
-            index = s1.indexOf(search, index) + search.length() + firstQuarterAway(gameNumber).length() + 1;
+            index = s1.indexOf(search, index) + search.length() + getFirstQuarterAway(gameNumber).length() + 1;
         }
         int end = s1.indexOf(",", index);
         String sub1 = s1.substring(index, end);
         return sub1;
     }
     
-    public String thirdQuarterAway(int gameNumber){
+    public String getThirdQuarterAway(int gameNumber){
         if(getStatus(gameNumber).equals("scheduled")){
             return "0";
         }
@@ -233,14 +233,14 @@ public class sportsFeedTranslator {
         int index = 0;
         String search = "awayPeriods\":[";
         for(int c = 0; c < gameNumber; c++){
-            index = s1.indexOf(search, index) + search.length() + firstQuarterAway(gameNumber).length() + 1 + secondQuarterAway(gameNumber).length() + 1;
+            index = s1.indexOf(search, index) + search.length() + getFirstQuarterAway(gameNumber).length() + 1 + getSecondQuarterAway(gameNumber).length() + 1;
         }
         int end = s1.indexOf(",", index);
         String sub1 = s1.substring(index, end);
         return sub1;
     }
     
-    public String fourthQuarterAwayFootball(int gameNumber){
+    public String getFourthQuarterAwayFootball(int gameNumber){
         if(getStatus(gameNumber).equals("scheduled")){
             return "0";
         }
@@ -248,7 +248,7 @@ public class sportsFeedTranslator {
         int index = 0;
         String search = "awayPeriods\":[";
         for(int c = 0; c < gameNumber; c++){
-            index = s1.indexOf(search, index) + search.length() + firstQuarterAway(gameNumber).length() + 1 + secondQuarterAway(gameNumber).length() + 1 + thirdQuarterAway(gameNumber).length() + 1;
+            index = s1.indexOf(search, index) + search.length() + getFirstQuarterAway(gameNumber).length() + 1 + getSecondQuarterAway(gameNumber).length() + 1 + getThirdQuarterAway(gameNumber).length() + 1;
         }
         int end = s1.indexOf("]", index);
         String sub1 = s1.substring(index, end);

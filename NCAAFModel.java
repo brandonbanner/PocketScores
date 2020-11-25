@@ -51,34 +51,34 @@ public class NCAAFModel {
     }
     
     public String getFirstHomeQuarter(int gameNum){
-        return this.SFAPITranslator.firstQuarterHome(gameNum);
+        return this.SFAPITranslator.getFirstQuarterHome(gameNum);
     }
     
     public String getSecondHomeQuarter(int gameNum){
-        return this.SFAPITranslator.secondQuarterHome(gameNum);
+        return this.SFAPITranslator.getSecondQuarterHome(gameNum);
     }
     
     public String getThirdHomeQuarter(int gameNum){
-        return this.SFAPITranslator.thirdQuarterHome(gameNum);
+        return this.SFAPITranslator.getThirdQuarterHome(gameNum);
     }
     
     public String getFourthHomeQuarter(int gameNum){
-        return this.SFAPITranslator.fourthQuarterHomeFootball(gameNum);
+        return this.SFAPITranslator.getFourthQuarterHomeFootball(gameNum);
     }
     
     public String getFirstAwayQuarter(int gameNum){
-        return this.SFAPITranslator.firstQuarterAway(gameNum);
+        return this.SFAPITranslator.getFirstQuarterAway(gameNum);
     }
     
     public String getSecondAwayQuarter(int gameNum){
-        return this.SFAPITranslator.secondQuarterAway(gameNum);
+        return this.SFAPITranslator.getSecondQuarterAway(gameNum);
     }
     
     public String getThirdAwayQuarter(int gameNum){
-        return this.SFAPITranslator.thirdQuarterAway(gameNum);
+        return this.SFAPITranslator.getThirdQuarterAway(gameNum);
     }
     
     public String getFourthAwayQuarter(int gameNum){
-        return this.SFAPITranslator.fourthQuarterAwayFootball(gameNum);
+        return this.SFAPITranslator.getFourthQuarterAwayFootball(gameNum);
     }
 }
