@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane hbarPolicy="NEVER" hmax="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vmax="25.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PocketScores.NFLListViewController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Pane id="AnchorPane" fx:id="listBase" layoutX="-2.0" layoutY="-2.0" prefHeight="406.0" prefWidth="600.0" style="-fx-background-color: yellow;" styleClass="styleBody" stylesheets="@overall.css">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="53.0" prefWidth="600.0" style="-fx-background-color: black;">
+                     <children>
+                        <Text fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="NFL">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="45.0" />
+                           </HBox.margin>
+                        </Text>
+                        <JFXComboBox fx:id="monthBox" focusColor="#f8f403" prefHeight="29.0" prefWidth="118.0" promptText="Month" style="-jfx-label-float: true;" unFocusColor="#f8f403" />
+                        <JFXComboBox fx:id="dayBox" focusColor="#f8f403" prefHeight="29.0" prefWidth="118.0" promptText="Day" style="-jfx-label-float: true;" unFocusColor="#f8f403" />
+                        <JFXComboBox fx:id="yearBox" focusColor="#f8f403" prefHeight="29.0" prefWidth="118.0" promptText="Year" style="-jfx-label-float: true;" unFocusColor="#f8f403" />
+                     </children></HBox>
+                  <Text fill="#f8f403" layoutX="559.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#f8f403" layoutX="577.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+                  <VBox layoutX="496.0" layoutY="84.0" prefHeight="61.0" prefWidth="63.0" />
+                  <JFXHamburger fx:id="navButton" layoutX="11.0" layoutY="16.0" />
+                  <JFXDrawer fx:id="menuDrawer" defaultDrawerSize="150.0" layoutY="53.0" prefHeight="350.0" prefWidth="150.0" />
+                  <HBox fx:id="fullListItem" alignment="CENTER_LEFT" layoutX="42.0" layoutY="84.0" onTouchPressed="#handlelistItem" prefHeight="61.0" prefWidth="517.0" style="-fx-border-color: black;">
+                     <children>
+                        <VBox alignment="CENTER" onMouseClicked="#handlelistItem" prefHeight="61.0" prefWidth="118.0" style="-fx-background-color: black;">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <children>
+                              <Text fx:id="gameDay1" fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
+                              <Text fx:id="gameDate1" fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="gameTime1" fill="#ee7802" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Time" />
+                           </children>
+                        </VBox>
+                        <VBox onMouseClicked="#handlelistItem" prefHeight="59.0" prefWidth="70.0" />
+                        <VBox alignment="CENTER" onMouseClicked="#handlelistItem" prefHeight="61.0" prefWidth="115.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visitor" />
+                              <Text fx:id="visitorTeamName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <Text onMouseClicked="#handlelistItem" strokeType="OUTSIDE" strokeWidth="0.0" text="V.S.">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <VBox alignment="CENTER" onMouseClicked="#handlelistItem" prefHeight="61.0" prefWidth="115.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home" />
+                              <Text fx:id="homeTeamName1" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox onMouseClicked="#handlelistItem" prefHeight="59.0" prefWidth="70.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets right="10.0" />
+                     </opaqueInsets>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis></AnchorPane>
+  </content>
+   <padding>
+      <Insets right="-5.0" />
+   </padding>
+</ScrollPane>
