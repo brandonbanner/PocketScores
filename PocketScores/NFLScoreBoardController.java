@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package PocketScores;
 
 import com.jfoenix.controls.JFXDrawer;
@@ -20,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
 
 
 public class NFLScoreBoardController implements Initializable {
@@ -57,12 +53,39 @@ public class NFLScoreBoardController implements Initializable {
     private Text visitorQ3;
     @FXML
     private Text visitorQ4;
+    @FXML
+    private Text gameStatus;
     
-
+    String date = "";
+    int gameNum = 1;
+    
+    //Create item to call on NFL List View
+    NFLListViewController viewInfo = new NFLListViewController();
+    
+    // Create instance of NFL Model
+    NFLModel nflModel = new NFLModel (date);
+    
     
     // Menu Sliding Drawer
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        homeOverallScore.setText(nflModel.getHomeScore(gameNum));
+        homeTeamName.setText(nflModel.getHomeTeam(gameNum));
+        visitorOverallScore.setText(nflModel.getAwayScore(gameNum));
+        visitorTeamName.setText(nflModel.getAwayTeam(gameNum));
+        gameTime.setText(nflModel.getRemainingTime(gameNum));
+        homeQ1.setText("Q1: " + nflModel.getFirstHomeQuarter(gameNum));
+        homeQ2.setText("Q2: " + nflModel.getSecondHomeQuarter(gameNum));
+        homeQ3.setText("Q3: " + nflModel.getThirdHomeQuarter(gameNum));
+        homeQ4.setText("Q4: " + nflModel.getFourthHomeQuarter(gameNum));
+        qtr.setText(nflModel.getCurrentQuarter(gameNum));
+        visitorQ1.setText("Q1: " + nflModel.getFirstAwayQuarter(gameNum));
+        visitorQ2.setText("Q2: " + nflModel.getSecondAwayQuarter(gameNum));
+        visitorQ3.setText("Q3: " + nflModel.getThirdAwayQuarter(gameNum));
+        visitorQ4.setText("Q4: " + nflModel.getFourthAwayQuarter(gameNum));
+        gameStatus.setText("Game Status: " + nflModel.getStatus(gameNum));
+        
         try {
             PocketScores.stg.close();
             VBox slidePane = FXMLLoader.load(getClass().getResource("menuSlidePane.fxml"));
@@ -96,4 +119,5 @@ public class NFLScoreBoardController implements Initializable {
     
 
     
-    }}
+    } 
+}

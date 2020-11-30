@@ -20,6 +20,8 @@ public class MenuSlidePaneController implements Initializable {
     private JFXButton mainMenuButton;
     @FXML
     private JFXButton settingsButton;
+    @FXML
+    private JFXButton gameListButton;
 
     
     @Override
@@ -34,8 +36,26 @@ public class MenuSlidePaneController implements Initializable {
            FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("/PocketScores/StartupView.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 Stage stage = new Stage();
-                stage.initStyle(StageStyle.UNDECORATED);
+                stage.initStyle(StageStyle.DECORATED);
                 stage.setTitle("PocketScores");
+                stage.setScene(new Scene(root1));
+                stage.show();
+                PocketScores.stg.close();
+                
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    @FXML
+    private void handleGameListButton(ActionEvent event) {
+         try{
+            
+           FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("/PocketScores/NFLListView.fxml"));
+                Parent root1 = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setTitle("PocketScores: NFL");
+                stage.initStyle(StageStyle.DECORATED);
                 stage.setScene(new Scene(root1));
                 stage.show();
                 PocketScores.stg.close();

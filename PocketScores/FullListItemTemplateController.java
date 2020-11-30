@@ -33,7 +33,6 @@ public class FullListItemTemplateController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
 
     @FXML
@@ -56,7 +55,22 @@ public class FullListItemTemplateController implements Initializable {
     }
 
     
-    void setContent (String txt){
+    void setHomeTeamName (String txt){
         homeTeamName.setText(txt);
+    }
+    
+    void setAwayTeamName (String txt){
+        visitorTeamName.setText(txt);
+    }
+    
+    void setGameTime (String txt){
+        gameTime.setText(txt);
+    }
+    
+    void setGameDate (String txt){
+        gameDate.setText(txt);
+    }
+    
+    void removeListItem (){
     }
 }

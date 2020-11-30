@@ -1,6 +1,4 @@
 package PocketScores;
-
-import com.jfoenix.controls.JFXComboBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -13,13 +11,24 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.scene.control.ScrollBar;
+import java.lang.Object;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.Calendar;
+import javafx.event.ActionEvent;
+import javafx.scene.control.DatePicker;
 
 public class NFLListViewController implements Initializable {
 
@@ -28,44 +37,37 @@ public class NFLListViewController implements Initializable {
     private Pane listBase;
     
     @FXML
-    private VBox fullListItem;
-    
-    @FXML
     private JFXHamburger navButton;
     
     @FXML
     private JFXDrawer menuDrawer;
-    
-    @FXML
-    private JFXComboBox monthBox;
-    
-    @FXML
-    private JFXComboBox dayBox;
-    
-    @FXML
-    private JFXComboBox  yearBox;
-    
-    @FXML
-    private Text gameDay;
-    
-    @FXML
-    private Text gameDate;
-    
-    @FXML
-    private Text gameTime;
-    
-    @FXML
-    private Text visitorTeamName;
-    
-    @FXML
-    private Text homeTeamName;
 
+    @FXML
+    private ScrollPane backdrop;
+    
+     @FXML
+    private DatePicker datePicker;
+    
+    String date = "";
+    
+    //String txt = "Text";
+    NFLModel nflModel = new NFLModel (date);
+    
+    Node fullListItem;
+
+    
    // Menu Sliding Drawer
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        backdrop.setContent(listBase);
+        backdrop.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        backdrop.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         
+
+        genListItem(nflModel.getNumGames());
         
+       //genListItem(13);
         try {
            
             VBox slidePane = FXMLLoader.load(getClass().getResource("menuSlidePane.fxml"));
@@ -98,73 +100,21 @@ public class NFLListViewController implements Initializable {
             }
         });
         
-        // Month comboBox items
-         monthBox.getItems().add("January");
-         monthBox.getItems().add("February");
-         monthBox.getItems().add("March");
-         monthBox.getItems().add("April");
-         monthBox.getItems().add("May");
-         monthBox.getItems().add("June");
-         monthBox.getItems().add("July");
-         monthBox.getItems().add("August");
-         monthBox.getItems().add("September");
-         monthBox.getItems().add("October");
-         monthBox.getItems().add("November");
-         monthBox.getItems().add("December");
-                
-        //Day comboBox items
-        
-        /* for (int day = 0; day <= 31; day++){
-            monthBox.getItems().add("" + day);
-        }*/
-        
-        dayBox.getItems().add("1");
-        dayBox.getItems().add("2");
-        dayBox.getItems().add("3");
-        dayBox.getItems().add("4");
-        dayBox.getItems().add("5");
-        dayBox.getItems().add("6");
-        dayBox.getItems().add("7");
-        dayBox.getItems().add("8");
-        dayBox.getItems().add("9");
-        dayBox.getItems().add("10");
-        dayBox.getItems().add("11");
-        dayBox.getItems().add("12");
-        dayBox.getItems().add("13");
-        dayBox.getItems().add("14");
-        dayBox.getItems().add("15");
-        dayBox.getItems().add("16");
-        dayBox.getItems().add("17");
-        dayBox.getItems().add("18");
-        dayBox.getItems().add("19");
-        dayBox.getItems().add("20");
-        dayBox.getItems().add("21");
-        dayBox.getItems().add("22");
-        dayBox.getItems().add("23");
-        dayBox.getItems().add("24");
-        dayBox.getItems().add("26");
-        dayBox.getItems().add("27");
-        dayBox.getItems().add("28");
-        dayBox.getItems().add("29");
-        dayBox.getItems().add("30");
-        dayBox.getItems().add("31");
-
-        
-        
-        // Year comboBox items
-        yearBox.getItems().add("2021");
-        yearBox.getItems().add("2020");
-        yearBox.getItems().add("2019");
-        yearBox.getItems().add("2018");
-        yearBox.getItems().add("2017");
-        yearBox.getItems().add("2016");
-        yearBox.getItems().add("2015");
-        
     }  
+    
+    // Generate HBox list items based upon number of games
+    public void genListItem(int numGames){
+        for(int i = 0, x = 42, y = 84, g = 1; i < numGames && g <= numGames; i++, y += 84, g++){
+          genFullListItem(x, y, g);
+        }
+            
+    }
 
     // Open Scoreboard view when list item is clicked
-    @FXML
     private void handlelistItem(MouseEvent event) {
+        
+        Node source = (Node) event.getSource();
+        
         try{
             
            FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("/PocketScores/NFLScoreBoard.fxml"));
@@ -179,5 +129,48 @@ public class NFLListViewController implements Initializable {
         } catch (Exception e){
             System.out.println(e);
         }
+    }
+    
+    
+    
+    private void genFullListItem(int x, int y, int g) {
+        FXMLLoader loader = new FXMLLoader();
+        
+        try{
+            Node fli = loader.load(getClass().getResource("FullListItemTemplate.fxml").openStream());
+            listBase.getChildren().add(fli);
+            fli.setLayoutX(x);
+            fli.setLayoutY(y);
+            fli.toBack();
+            fullListItem = fli;
+            
+            // Get Controller
+            FullListItemTemplateController homeTeamName = (FullListItemTemplateController) loader.getController();
+            homeTeamName.setHomeTeamName(nflModel.getHomeTeam(g));
+            //homeTeamName.setHomeTeamName(txt);
+            
+            FullListItemTemplateController visitorTeamName = (FullListItemTemplateController) loader.getController();
+            visitorTeamName.setAwayTeamName(nflModel.getAwayTeam(g));
+            //visitorTeamName.setAwayTeamName(txt);
+            
+            FullListItemTemplateController gameTime = (FullListItemTemplateController) loader.getController();
+            gameTime.setGameTime(nflModel.getStartTime(g));
+            //gameTime.setGameTime(txt);
+            
+            FullListItemTemplateController gameDate = (FullListItemTemplateController) loader.getController();
+            gameDate.setGameDate(date);
+
+        } catch (IOException ex){
+            ex.printStackTrace();
+    }
+}
+
+    @FXML
+    private void handleDate(ActionEvent event) {
+        listBase.getChildren().remove(fullListItem);
+        LocalDate thedate = datePicker.getValue();
+        date = String.valueOf(thedate);
+        nflModel = new NFLModel (date);
+        genListItem(nflModel.getNumGames());
     }
 }
