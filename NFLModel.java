@@ -4,7 +4,7 @@ package pocketscoresapitranslator;
 
 public class NFLModel {
     
-    protected SportsFeedTranslator SFAPITranslator = new SportsFeedTranslator("NFL", "");
+    protected SportsFeedTranslator SFAPITranslator = new SportsFeedTranslator();
     
     public NFLModel(String date){
         this.SFAPITranslator = new SportsFeedTranslator("NFL", date);

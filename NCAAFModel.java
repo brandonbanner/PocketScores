@@ -4,7 +4,7 @@ package pocketscoresapitranslator;
 
 public class NCAAFModel {
     
-    protected SportsFeedTranslator SFAPITranslator = new SportsFeedTranslator("NCAAF", "");
+    protected SportsFeedTranslator SFAPITranslator = new SportsFeedTranslator();
     
     public NCAAFModel(String date){
         this.SFAPITranslator = new SportsFeedTranslator("NCAAF", date);
