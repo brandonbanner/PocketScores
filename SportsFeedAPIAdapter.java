@@ -1,6 +1,11 @@
 
 package pocketscoresapitranslator;
-
+/**
+ * Last updated: 2020-11-30
+ * This is the adapter which connects to the API PocketScores. It's purpose is
+ * to pull game data from the API.
+ * Contributing authors: Clayton Winters
+ */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;

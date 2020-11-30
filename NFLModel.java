@@ -1,7 +1,13 @@
 
 package pocketscoresapitranslator;
-
-
+/**
+ * Last updated: 2020-11-30
+ * This is the model for the NFL game. It's purpose is to handle the data
+ * returned from the translator. This app simply displays data without altering
+ * it; the methods here only call and return the output of methods from the
+ * translator, SportsFeedTranslator.
+ * Contributing authors:George Bell
+ */
 public class NFLModel {
     
     protected SportsFeedTranslator SFAPITranslator = new SportsFeedTranslator();

@@ -1,6 +1,11 @@
 
 package pocketscoresapitranslator;
-
+/**
+ * Last updated: 2020-11-30
+ * This is the translator which connects to the adapter class SportsFeedAPIAdapter. It's purpose is
+ * to pull specific information from the data which the adapter returns from the API.
+ * Contributing authors:George Bell
+ */
 public class SportsFeedTranslator {
     
     protected String output = "";
@@ -8,6 +13,10 @@ public class SportsFeedTranslator {
     public SportsFeedTranslator(String _league, String _date){
         SportsFeedAPIAdapter adapter = new SportsFeedAPIAdapter(_league, _date);
         output = adapter.getAPIstring();
+    }
+
+    SportsFeedTranslator() {
+        
     }
     
     //=================================GETTERS=================================
@@ -64,6 +73,8 @@ public class SportsFeedTranslator {
     public String getRemainingTime(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "15:00";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -79,18 +90,20 @@ public class SportsFeedTranslator {
     public String getStatus(int _gameNumber){
         String s1 = this.output;
         int index = 0;
-        String search = "status\":";
-        for(int c = 0; c < _gameNumber + 1; c++){
+        String search = "status\":\"";
+        for(int c = 0; c < _gameNumber; c++){
             index = s1.indexOf(search, index) + search.length();
         }
-        int end = s1.indexOf("\"", index+1);
-        String sub1 = s1.substring(index+1, end);
+        int end = s1.indexOf("\"", index);
+        String sub1 = s1.substring(index, end);
         return sub1;
     }
     
     public String getCurrentPeriod(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "1";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -106,6 +119,8 @@ public class SportsFeedTranslator {
     public String getHomeScore(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -121,6 +136,8 @@ public class SportsFeedTranslator {
     public String getAwayScore(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -136,6 +153,8 @@ public class SportsFeedTranslator {
     public String getFirstQuarterHome(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -151,6 +170,8 @@ public class SportsFeedTranslator {
     public String getSecondQuarterHome(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -166,6 +187,8 @@ public class SportsFeedTranslator {
     public String getThirdQuarterHome(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -181,6 +204,8 @@ public class SportsFeedTranslator {
     public String getFourthQuarterHomeFootball(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -196,6 +221,8 @@ public class SportsFeedTranslator {
     public String getFirstQuarterAway(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -211,6 +238,8 @@ public class SportsFeedTranslator {
     public String getSecondQuarterAway(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -226,6 +255,8 @@ public class SportsFeedTranslator {
     public String getThirdQuarterAway(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
@@ -241,6 +272,8 @@ public class SportsFeedTranslator {
     public String getFourthQuarterAwayFootball(int _gameNumber){
         if(getStatus(_gameNumber).equals("scheduled")){
             return "0";
+        }else if(getStatus(_gameNumber).equals("canceled")){
+            return "N/A";
         }
         String s1 = this.output;
         int index = 0;
