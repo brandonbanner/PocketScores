@@ -40,13 +40,15 @@ public class FullListItemTemplateController implements Initializable {
     private void handlelistItem(MouseEvent event) {
         
          try{
-            
+            Node source = (Node) event.getSource();
+            System.out.println("Source ID: " + source.getId());
+            NFLListViewController.gameNum = Integer.parseInt(source.getId());
+
            FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("/PocketScores/NFLScoreBoard.fxml"));
                 Parent root1 = (Parent) fxmlLoader.load();
                 PocketScores.window.setTitle("PocketScores: Current NFL Game");
                 PocketScores.window.setScene(new Scene(root1));
                 PocketScores.window.show();
-                //PocketScores.window.close();
                 
         } catch (Exception e){
             System.out.println(e);

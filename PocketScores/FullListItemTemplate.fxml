@@ -13,32 +13,32 @@
             <Insets />
          </opaqueInsets>
          <children>
-            <Text fx:id="gameDay" fill="#f8f403" onMouseClicked="#handlelistItem" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
-            <Text fx:id="gameDate" fill="#f8f403" onMouseClicked="#handlelistItem" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE">
+            <Text fx:id="gameDay" fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
+            <Text fx:id="gameDate" fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fx:id="gameTime" fill="#ee7802" onMouseClicked="#handlelistItem" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Time" />
+            <Text fx:id="gameTime" fill="#ee7802" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Time" />
          </children>
       </VBox>
-      <VBox onMouseClicked="#handlelistItem" prefHeight="59.0" prefWidth="70.0" />
-      <VBox alignment="CENTER" onMouseClicked="#handlelistItem" prefHeight="61.0" prefWidth="115.0">
+      <VBox prefHeight="59.0" prefWidth="70.0" />
+      <VBox alignment="CENTER" prefHeight="61.0" prefWidth="115.0">
          <children>
-            <Text onMouseClicked="#handlelistItem" strokeType="OUTSIDE" strokeWidth="0.0" text="Visitor" />
-            <Text fx:id="visitorTeamName" onMouseClicked="#handlelistItem" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Name">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visitor" />
+            <Text fx:id="visitorTeamName" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Name">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
          </children>
       </VBox>
-      <Text onMouseClicked="#handlelistItem" strokeType="OUTSIDE" strokeWidth="0.0" text="V.S.">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="V.S.">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <VBox alignment="CENTER" onMouseClicked="#handlelistItem" prefHeight="61.0" prefWidth="115.0">
+      <VBox alignment="CENTER" prefHeight="61.0" prefWidth="115.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home" />
             <Text fx:id="homeTeamName" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Name">
@@ -48,7 +48,7 @@
             </Text>
          </children>
       </VBox>
-      <VBox onMouseClicked="#handlelistItem" prefHeight="59.0" prefWidth="70.0">
+      <VBox prefHeight="59.0" prefWidth="70.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>

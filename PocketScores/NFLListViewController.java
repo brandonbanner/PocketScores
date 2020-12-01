@@ -28,6 +28,7 @@ import javafx.stage.StageStyle;
 import javafx.scene.control.ScrollBar;
 import java.lang.Object;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
 import javafx.event.ActionEvent;
@@ -58,6 +59,8 @@ public class NFLListViewController implements Initializable, ActionListener {
     NFLModel nflModel = new NFLModel (StartupViewController.date);
     
     Node fullListItem;
+    
+    ArrayList <Node> allNodes = new ArrayList <Node> ();
 
     //NFLListViewController listItemList = new NFLListViewController ();
 
@@ -117,10 +120,10 @@ public class NFLListViewController implements Initializable, ActionListener {
 
     // Open Scoreboard view when list item is clicked
     private void handlelistItem(MouseEvent event) {
-
         try{
             
         Node source = (Node) event.getSource();
+            System.out.println("Source ID: " + source.getId());
         NFLListViewController.gameNum = Integer.parseInt(source.getId());
        // NFLListViewController.gameNum = Integer.parseInt(event.gets);
         
@@ -138,7 +141,6 @@ public class NFLListViewController implements Initializable, ActionListener {
     }
     
     
-    
     private void genFullListItem(int x, int y, int g) {
         FXMLLoader loader = new FXMLLoader();
         
@@ -150,19 +152,17 @@ public class NFLListViewController implements Initializable, ActionListener {
             fli.setLayoutY(y);
             fli.toBack();
             fullListItem = fli;
+            this.allNodes.add(fli);
             
             // Get Controller
             FullListItemTemplateController homeTeamName = (FullListItemTemplateController) loader.getController();
             homeTeamName.setHomeTeamName(nflModel.getHomeTeam(g));
-            //homeTeamName.setHomeTeamName(txt);
             
             FullListItemTemplateController visitorTeamName = (FullListItemTemplateController) loader.getController();
             visitorTeamName.setAwayTeamName(nflModel.getAwayTeam(g));
-            //visitorTeamName.setAwayTeamName(txt);
             
             FullListItemTemplateController gameTime = (FullListItemTemplateController) loader.getController();
             gameTime.setGameTime(nflModel.getStartTime(g));
-            //gameTime.setGameTime(txt);
             
             FullListItemTemplateController gameDate = (FullListItemTemplateController) loader.getController();
             gameDate.setGameDate(StartupViewController.date);
@@ -175,14 +175,15 @@ public class NFLListViewController implements Initializable, ActionListener {
     @FXML
     private void handleDate(ActionEvent event) {
         
-        listBase.getChildren().remove(fullListItem);
+        //for (type var : array)
+        for (Node listNode: this.allNodes){
+            listBase.getChildren().remove(listNode);
+        }
+            
         LocalDate thedate = datePicker.getValue();
         StartupViewController.date = String.valueOf(thedate);
        nflModel = new NFLModel (StartupViewController.date);
        genListItem(nflModel.getNumGames());
-    }
-    public String getDate (){
-        return StartupViewController.date;
     }
     
 
