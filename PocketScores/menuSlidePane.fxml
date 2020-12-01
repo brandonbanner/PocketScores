@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="356.0" prefWidth="150.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PocketScores.MenuSlidePaneController">
+   <children>
+      <JFXButton fx:id="mainMenuButton" buttonType="RAISED" onAction="#handleMainMenuButton" prefHeight="100.0" prefWidth="150.0" ripplerFill="#f8f403" text="Main Menu" textFill="#f8f403">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="gameListButton" buttonType="RAISED" onAction="#handleGameListButton" prefHeight="100.0" prefWidth="150.0" ripplerFill="#f8f403" text="Game List" textFill="#f8f403">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="settingsButton" buttonType="RAISED" prefHeight="100.0" prefWidth="150.0" ripplerFill="#f8f403" text="Settings" textFill="#f8f403">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>

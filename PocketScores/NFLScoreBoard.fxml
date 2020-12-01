@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PocketScores.NFLScoreBoardController">
+    <stylesheets>
+        <URL value="@overall.css" />
+    </stylesheets>
+   <children>
+      <Pane id="AnchorPane" prefHeight="409.0" prefWidth="600.0" style="-fx-background-color: yellow;" styleClass="styleBody" stylesheets="@overall.css">
+         <children>
+            <Text fill="#f8f403" layoutX="64.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NFL">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#f8f403" layoutX="565.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#f8f403" layoutX="577.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <VBox alignment="CENTER" layoutX="77.0" layoutY="82.0" prefHeight="118.0" prefWidth="145.0" style="-fx-border-color: Red; -fx-border-style: dashed;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HOME">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="homeOverallScore" text="##">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="homeTeamName" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="379.0" layoutY="82.0" prefHeight="118.0" prefWidth="145.0" style="-fx-border-color: red; -fx-border-style: dashed;">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visitor">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="visitorOverallScore" text="##">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="visitorTeamName" strokeType="OUTSIDE" strokeWidth="0.0" text="Team Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="228.0" layoutY="82.0" prefHeight="118.0" prefWidth="145.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TIME">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="gameTime" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME" textAlignment="CENTER">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="99.0" layoutY="211.0" prefHeight="182.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score by Quarter">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="homeQ1" strokeType="OUTSIDE" strokeWidth="0.0" text="Q1:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="homeQ2" strokeType="OUTSIDE" strokeWidth="0.0" text="Q2:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="homeQ3" strokeType="OUTSIDE" strokeWidth="0.0" text="Q3:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="homeQ4" strokeType="OUTSIDE" strokeWidth="0.0" text="Q4:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="250.0" layoutY="211.0" prefHeight="83.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="QTR">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="qtr" strokeType="OUTSIDE" strokeWidth="0.0" text="#">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="401.0" layoutY="211.0" prefHeight="182.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score by Quarter">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="visitorQ1" strokeType="OUTSIDE" strokeWidth="0.0" text="Q1:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="visitorQ2" strokeType="OUTSIDE" strokeWidth="0.0" text="Q2:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="visitorQ3" strokeType="OUTSIDE" strokeWidth="0.0" text="Q3:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="visitorQ4" strokeType="OUTSIDE" strokeWidth="0.0" text="Q4:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="250.0" layoutY="303.0" prefHeight="83.0" prefWidth="100.0" />
+            <ImageView fitHeight="77.0" fitWidth="71.0" layoutX="6.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="77.0" fitWidth="71.0" layoutX="524.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="600.0" style="-fx-background-color: black;">
+               <children>
+                  <Text fx:id="gameStatus" fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Status: Final" textAlignment="CENTER" wrappingWidth="302.0703125">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children></HBox>
+            <JFXHamburger fx:id="navButton" layoutX="11.0" layoutY="16.0" />
+            <Text fill="#f8f403" layoutX="65.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NFL">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <JFXDrawer fx:id="menuDrawer" defaultDrawerSize="150.0" layoutY="53.0" prefHeight="356.0" prefWidth="150.0" />
+      <Text fill="#f8f403" layoutX="559.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#f8f403" layoutX="577.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
