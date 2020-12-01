@@ -189,7 +189,7 @@ public class SportsFeedTranslator {
 
     //Gets the current score for the second quarter of the home team of the game corresponding to _gameNumber from the String "output".
     public String getSecondQuarterHome(int _gameNumber){
-        if(getStatus(_gameNumber).equals("scheduled")){
+        if(Integer.parseInt(getCurrentPeriod(_gameNumber)) < 2){
             return "0";
         }else if(getStatus(_gameNumber).equals("canceled")){
             return "N/A";
@@ -217,7 +217,7 @@ public class SportsFeedTranslator {
 
     //Gets the current score for the third quarter of the home team of the game corresponding to _gameNumber from the String "output".
     public String getThirdQuarterHome(int _gameNumber){
-        if(getStatus(_gameNumber).equals("scheduled")){
+        if(Integer.parseInt(getCurrentPeriod(_gameNumber)) < 3){
             return "0";
         }else if(getStatus(_gameNumber).equals("canceled")){
             return "N/A";
@@ -245,7 +245,7 @@ public class SportsFeedTranslator {
 
     //Gets the current score for the fourth quarter of the home team of the game corresponding to _gameNumber from the String "output".
     public String getFourthQuarterHomeFootball(int _gameNumber){
-        if(getStatus(_gameNumber).equals("scheduled")){
+        if(Integer.parseInt(getCurrentPeriod(_gameNumber)) < 4){
             return "0";
         }else if(getStatus(_gameNumber).equals("canceled")){
             return "N/A";
@@ -291,7 +291,7 @@ public class SportsFeedTranslator {
 
     //Gets the current score for the second quarter of the visiting team of the game corresponding to _gameNumber from the String "output".
     public String getSecondQuarterAway(int _gameNumber){
-        if(getStatus(_gameNumber).equals("scheduled")){
+        if(Integer.parseInt(getCurrentPeriod(_gameNumber)) < 2){
             return "0";
         }else if(getStatus(_gameNumber).equals("canceled")){
             return "N/A";
@@ -319,7 +319,7 @@ public class SportsFeedTranslator {
 
     //Gets the current score for the third quarter of the visiting team of the game corresponding to _gameNumber from the String "output".
     public String getThirdQuarterAway(int _gameNumber){
-        if(getStatus(_gameNumber).equals("scheduled")){
+        if(Integer.parseInt(getCurrentPeriod(_gameNumber)) < 3){
             return "0";
         }else if(getStatus(_gameNumber).equals("canceled")){
             return "N/A";
@@ -347,7 +347,7 @@ public class SportsFeedTranslator {
 
     //Gets the current score for the fourth quarter of the visiting team of the game corresponding to _gameNumber from the String "output".
     public String getFourthQuarterAwayFootball(int _gameNumber){
-        if(getStatus(_gameNumber).equals("scheduled")){
+        if(Integer.parseInt(getCurrentPeriod(_gameNumber)) < 4){
             return "0";
         }else if(getStatus(_gameNumber).equals("canceled")){
             return "N/A";
