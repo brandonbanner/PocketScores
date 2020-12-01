@@ -6,14 +6,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="fullListItem" alignment="CENTER_LEFT" onMouseClicked="#handlelistItem" onTouchPressed="#handlelistItem" prefHeight="61.0" prefWidth="517.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PocketScores.FullListItemTemplateController">
+<HBox fx:id="fullListItem" alignment="CENTER_LEFT" onMouseClicked="#handleListItem" onTouchPressed="#handleListItem" prefHeight="61.0" prefWidth="517.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PocketScores.FullListItemTemplateController">
    <children>
-      <VBox alignment="CENTER" onMouseClicked="#handlelistItem" prefHeight="61.0" prefWidth="118.0" style="-fx-background-color: black;">
+      <VBox alignment="CENTER" onMouseClicked="#handleListItem" prefHeight="61.0" prefWidth="118.0" style="-fx-background-color: black;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
-            <Text fx:id="gameDay" fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="Day" />
             <Text fx:id="gameDate" fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE">
                <font>
                   <Font size="18.0" />
@@ -37,6 +36,9 @@
          <font>
             <Font size="18.0" />
          </font>
+         <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </HBox.margin>
       </Text>
       <VBox alignment="CENTER" prefHeight="61.0" prefWidth="115.0">
          <children>

@@ -5,7 +5,6 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -35,7 +34,7 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <VBox alignment="CENTER" layoutX="77.0" layoutY="82.0" prefHeight="118.0" prefWidth="145.0" style="-fx-border-color: Red; -fx-border-style: dashed;">
+            <VBox alignment="CENTER" layoutX="60.0" layoutY="84.0" prefHeight="120.0" prefWidth="160.0" style="-fx-border-color: Red; -fx-border-style: dashed;">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HOME">
                      <font>
@@ -54,9 +53,9 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" layoutX="379.0" layoutY="82.0" prefHeight="118.0" prefWidth="145.0" style="-fx-border-color: red; -fx-border-style: dashed;">
+            <VBox alignment="CENTER" layoutX="387.0" layoutY="84.0" prefHeight="120.0" prefWidth="160.0" style="-fx-border-color: red; -fx-border-style: dashed;">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Visitor">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="VISITOR">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -73,7 +72,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" layoutX="228.0" layoutY="82.0" prefHeight="118.0" prefWidth="145.0">
+            <VBox alignment="CENTER" layoutX="221.0" layoutY="84.0" prefHeight="120.0" prefWidth="160.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TIME">
                      <font>
@@ -92,7 +91,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" layoutX="99.0" layoutY="211.0" prefHeight="182.0" prefWidth="100.0">
+            <VBox alignment="CENTER" layoutX="77.0" layoutY="213.0" prefHeight="182.0" prefWidth="100.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score by Quarter">
                      <font>
@@ -124,7 +123,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" layoutX="250.0" layoutY="211.0" prefHeight="83.0" prefWidth="100.0">
+            <VBox alignment="CENTER" layoutX="252.0" layoutY="213.0" prefHeight="83.0" prefWidth="100.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="QTR">
                      <font>
@@ -138,7 +137,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" layoutX="401.0" layoutY="211.0" prefHeight="182.0" prefWidth="100.0">
+            <VBox alignment="CENTER" layoutX="405.0" layoutY="212.0" prefHeight="182.0" prefWidth="100.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Score by Quarter">
                      <font>
@@ -170,9 +169,6 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" layoutX="250.0" layoutY="303.0" prefHeight="83.0" prefWidth="100.0" />
-            <ImageView fitHeight="77.0" fitWidth="71.0" layoutX="6.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="77.0" fitWidth="71.0" layoutX="524.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
             <HBox alignment="CENTER" prefHeight="53.0" prefWidth="600.0" style="-fx-background-color: black;">
                <children>
                   <Text fx:id="gameStatus" fill="#f8f403" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Status: Final" textAlignment="CENTER" wrappingWidth="302.0703125">
