@@ -1,7 +1,7 @@
 
 package pocketscoresapitranslator;
 /**
- * Last updated: 2020-11-30
+ * Last updated: 2020-12-01
  * This is the adapter which connects to the API PocketScores. It's purpose is
  * to pull game data from the API.
  * Contributing authors: Clayton Winters
@@ -35,7 +35,7 @@ public class SportsFeedAPIAdapter {
             in.close();
             con.disconnect();
             this.output = content.toString();
-            //System.out.println("Output: " + content.toString());
+            System.out.println("Output: " + content.toString());
         } catch (Exception ex) {
             //Logger.getLogger(DemoAPI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -43,6 +43,7 @@ public class SportsFeedAPIAdapter {
     
     //==================================GETTER==================================
     
+    //Gets the String "output", which contains all data for all games of the chosen league on the chosen date.
     public String getAPIstring(){
         return this.output;
     }
