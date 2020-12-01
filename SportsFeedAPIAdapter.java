@@ -1,10 +1,10 @@
 
 package pocketscoresapitranslator;
-/**
- * Last updated: 2020-12-01
- * This is the adapter which connects to the API PocketScores. It's purpose is
- * to pull game data from the API.
- * Contributing authors: Clayton Winters
+/*
+ Last updated: 2020-11-25
+This is the SportsFeedAPI Adapter which connects to the translator class SportsFeedTanslator. It's purpose is
+to connect to the SportsFeed REST-ful API service and returns the JSON object as a String to the SportsFeedTranslator.
+Contributing authors:Clayton Winters
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
